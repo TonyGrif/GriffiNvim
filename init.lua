@@ -9,8 +9,6 @@
 
 Requirements:
   Git (https://www.git-scm.com/)
-  Make (https://www.gnu.org/software/make/)
-  RipGrep (https://github.com/BurntSushi/ripgrep)
 
 Optional Requirements:
   Nerd Font (https://www.nerdfonts.com/)
@@ -41,7 +39,7 @@ require("lazy").setup({
         vim.cmd.colorscheme("tokyonight-night")
       end,
     },
-    -- { import = "plugins", }
+    { import = "plugins.ui", }
   },
   change_detection = { enabled = false, },
   ui = {

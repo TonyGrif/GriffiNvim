@@ -1,11 +1,11 @@
 -- [[ Diagnostic ]]
-vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "[D]iagnostic: [P]revious message" })
-vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "[D]iagnostic: [N]ext message" })
-vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "[D]iagnostic: show [E]rror messages" })
-vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "[D]iagnostic: [Q]uickfix list" })
+vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "[P]revious message" })
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "[N]ext message" })
+vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Show [E]rror messages" })
+vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "[Q]uickfix list" })
 
 -- [[ File Explorer ]]
-vim.keymap.set("n", "<leader>fe", "<cmd>Explore<CR>", { desc = "Open [F]ile [E]xplorer" })
+vim.keymap.set("n", "<leader>fe", "<cmd>Explore<CR>", { desc = "Open [E]xplorer" })
 
 -- [[ Navigation ]]
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
