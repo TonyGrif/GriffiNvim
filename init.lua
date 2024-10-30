@@ -9,6 +9,7 @@
 
 Requirements:
   Git (https://www.git-scm.com/)
+  C Compiler (https://gcc.gnu.org/)
 
 Optional Requirements:
   Nerd Font (https://www.nerdfonts.com/)
@@ -39,7 +40,8 @@ require("lazy").setup({
         vim.cmd.colorscheme("tokyonight-night")
       end,
     },
-    { import = "plugins.ui", }
+    { import = "plugins.ui", },
+    { import = "plugins.code" },
   },
   change_detection = { enabled = false, },
   ui = {
