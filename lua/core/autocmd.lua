@@ -6,3 +6,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+-- [[ Lua ]]
+vim.api.nvim_create_autocmd({"VimEnter", "BufReadPre", "FileType"}, {
+  desc = "Set spacing for lua files",
+  group = vim.api.nvim_create_augroup("lang-spacing", { clear = true }),
+  pattern = "*.lua",
+  callback = function()
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2
+  end,
+})
