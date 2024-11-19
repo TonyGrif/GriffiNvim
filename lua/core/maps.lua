@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Show [E]r
 vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "[Q]uickfix list" })
 
 -- [[ File Explorer ]]
-vim.keymap.set("n", "<leader>fe", "<cmd>Explore<CR>", { desc = "Open [E]xplorer" })
+vim.keymap.set("n", "<leader>fe", "<cmd>Explore<CR>", { desc = "Open [F]ile [E]xplorer" })
 
 -- [[ Navigation ]]
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
