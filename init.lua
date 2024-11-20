@@ -10,6 +10,7 @@
 Requirements:
   Git (https://www.git-scm.com/)
   C Compiler (https://gcc.gnu.org/)
+  RipGrep (https://github.com/BurntSushi/ripgrep)
 
 Optional Requirements:
   Nerd Font (https://www.nerdfonts.com/)

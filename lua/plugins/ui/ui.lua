@@ -20,7 +20,7 @@ return {
       wk.setup()
       wk.add({
         { "<leader>d", group="Diagnostics" },
-        { "<leader>f", group="Files" },
+        { "<leader>f", group="Find" },
         { "<leader>t", group="Toggle" },
       })
     end,
