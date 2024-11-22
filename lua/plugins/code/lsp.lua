@@ -26,11 +26,13 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
+        "nil_ls",
       },
     })
 
     local lspconfig = require("lspconfig")
 
     lspconfig.lua_ls.setup {}
+    lspconfig.nil_ls.setup {}
   end,
 }

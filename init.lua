@@ -12,6 +12,9 @@ Requirements:
   C Compiler (https://gcc.gnu.org/)
   RipGrep (https://github.com/BurntSushi/ripgrep)
 
+LSP Requirements:
+  Cargo (https://github.com/rust-lang/cargo)
+
 Optional Requirements:
   Nerd Font (https://www.nerdfonts.com/)
 
