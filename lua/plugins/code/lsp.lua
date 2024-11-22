@@ -3,6 +3,7 @@ return {
   dependencies = {
     {"williamboman/mason.nvim"},
     {"williamboman/mason-lspconfig.nvim"},
+    { "hrsh7th/cmp-nvim-lsp"},
   },
   config = function()
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -22,17 +23,23 @@ return {
       end,
     })
 
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+    local servers = {
+      lua_ls = {},
+      nil_ls = {},
+    }
+
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = {
-        "lua_ls",
-        "nil_ls",
+      ensure_installed = servers,
+      handlers = {
+        function(server_name)
+          local server = servers[server_name] or {}
+          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+          require("lspconfig")[server_name].setup(server)
+        end,
       },
     })
-
-    local lspconfig = require("lspconfig")
-
-    lspconfig.lua_ls.setup {}
-    lspconfig.nil_ls.setup {}
   end,
 }
