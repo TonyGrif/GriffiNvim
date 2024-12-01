@@ -19,6 +19,9 @@ return {
       -- Python Servers
       "pyright",
       "ruff",
+
+      -- Typst Server
+      "tinymist"
     }
 
     require("mason").setup()
