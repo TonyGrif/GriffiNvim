@@ -35,7 +35,6 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "auto"
 vim.opt.showmode = false
-vim.opt.termguicolors = true
 vim.opt.wrap = false
 
 -- [[ Undo ]]
