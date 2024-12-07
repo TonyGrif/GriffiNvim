@@ -7,7 +7,7 @@ return {
         ensure_installed = { "lua", "nix", "python", "vim", "vimdoc" },
         sync_install = false,
         highlight = { enable = true },
-        indent = { enable = true },
+        indent = { enable = false },
       })
     end
   },
