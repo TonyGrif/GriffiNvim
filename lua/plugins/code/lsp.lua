@@ -33,6 +33,18 @@ return {
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require("lspconfig")[server_name].setup(server)
         end,
+
+        lua_ls = function()
+          require("lspconfig").lua_ls.setup({
+            settings = {
+              Lua = {
+                diagnostics = {
+                  globals = { "vim" },
+                },
+              },
+            },
+          })
+        end,
       },
     })
   end,
