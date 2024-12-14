@@ -23,6 +23,9 @@ return {
       "pyright",
       "ruff",
 
+      -- Rust Servers
+      "rust_analyzer",
+
       -- Typst Server
       "tinymist"
     }
