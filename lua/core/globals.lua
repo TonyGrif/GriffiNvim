@@ -1,3 +1,8 @@
+--[[
+-- Global settings for this configuration.
+-- Change values as needed to determine available functionality.
+--]]
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
