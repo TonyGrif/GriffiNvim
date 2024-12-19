@@ -1,6 +1,12 @@
 -- [[ Color ]]
 vim.opt.termguicolors = true
 
+-- [[ Files ]]
+vim.opt.autowrite = true
+vim.opt.swapfile = true
+vim.opt.undofile = true
+vim.opt.updatetime = 250
+
 -- [[ Formatting ]]
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
@@ -21,10 +27,6 @@ vim.opt.ignorecase = true
 vim.opt.hlsearch = true
 vim.opt.smartcase = true
 
--- [[ Swap ]]
-vim.opt.swapfile = true
-vim.opt.updatetime = 250
-
 -- [[ UI Options ]]
 vim.opt.breakindent = false
 vim.opt.cursorline = true
@@ -36,6 +38,3 @@ vim.opt.scrolloff = 10
 vim.opt.signcolumn = "auto"
 vim.opt.showmode = false
 vim.opt.wrap = false
-
--- [[ Undo ]]
-vim.opt.undofile = true
