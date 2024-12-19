@@ -3,6 +3,7 @@ vim.opt.termguicolors = true
 
 -- [[ Files ]]
 vim.opt.autowrite = true
+vim.opt.confirm = true
 vim.opt.swapfile = true
 vim.opt.undofile = true
 vim.opt.updatetime = 250
@@ -15,6 +16,8 @@ vim.opt.tabstop = 4
 
 -- [[ General ]]
 vim.opt.clipboard = "unnamedplus"
+vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.conceallevel = 2
 vim.opt.timeoutlen = 500
 
 -- [[ Navigation ]]
