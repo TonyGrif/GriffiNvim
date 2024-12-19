@@ -1,9 +1,5 @@
 return {
   {
-    "nvim-tree/nvim-web-devicons",
-    enabled = vim.g.have_nerd_font,
-  },
-  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     keys = {
@@ -19,9 +15,9 @@ return {
       local wk = require("which-key")
       wk.setup()
       wk.add({
-        { "<leader>d", group="Diagnostics" },
-        { "<leader>f", group="Find" },
-        { "<leader>t", group="Toggle" },
+        { "<leader>d", group = "Diagnostics" },
+        { "<leader>f", group = "Find" },
+        { "<leader>t", group = "Toggle" },
       })
     end,
   },
