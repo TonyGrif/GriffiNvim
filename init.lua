@@ -8,6 +8,7 @@
  ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝     ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 
 Yet another NeoVim configuration
+
 --]]
 
 require("core")
