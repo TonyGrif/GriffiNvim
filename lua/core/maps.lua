@@ -1,3 +1,6 @@
+-- [[ Easy Escape ]]
+vim.keymap.set("i", "jk", "<ESC>")
+
 -- [[ Diagnostic ]]
 vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "[P]revious message" })
 vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "[N]ext message" })
