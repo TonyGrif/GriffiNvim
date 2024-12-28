@@ -37,6 +37,7 @@ require("lazy").setup({
     },
     { import = "plugins.ui", },
     { import = "plugins.code" },
+    { import = "plugins.learning" },
   },
   change_detection = { enabled = false, },
   ui = {
