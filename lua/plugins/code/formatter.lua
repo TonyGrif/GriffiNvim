@@ -5,6 +5,7 @@ return {
   opts = {
     formatters_by_ft = {
       bash = { "shfmt" },
+      css = { "prettier" },
       lua = { "stylua" },
       python = { "ruff_format", "isort" },
       typst = { "typstyle" },
