@@ -11,6 +11,7 @@ Yet another NeoVim configuration
 
 --]]
 
+require("globals")
 require("core")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
