@@ -30,6 +30,6 @@ return {
     })
 
     -- [[ File Explorer ]]
-    vim.keymap.set("n", "<leader>E", "<cmd>Oil<CR>")
+    vim.keymap.set("n", "<leader>E", "<cmd>Oil<CR>", { desc = "Open Oil File [E]xplorer" })
   end
 }

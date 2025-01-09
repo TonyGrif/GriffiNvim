@@ -1,6 +1,7 @@
 return {
   {
     "folke/which-key.nvim",
+    enabled = vim.g.learning,
     event = "VeryLazy",
     keys = {
       {
