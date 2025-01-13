@@ -7,7 +7,7 @@ return {
       bash = { "shfmt" },
       css = { "prettier" },
       lua = { "stylua" },
-      python = { "ruff_format", "isort" },
+      python = { "ruff_format" },
       typst = { "typstyle" },
     },
     default_format_opts = {
