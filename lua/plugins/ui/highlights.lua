@@ -6,4 +6,14 @@ return {
       signs = vim.g.have_nerd_font,
     },
   },
+  {
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
+    opts = {},
+  },
+  {
+    "winston0410/range-highlight.nvim",
+    event = { "CmdlineEnter" },
+    opts = {},
+  },
 }
