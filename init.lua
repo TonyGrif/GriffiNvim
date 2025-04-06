@@ -11,6 +11,9 @@ Yet another NeoVim configuration
 
 --]]
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 require("globals")
 require("core")
 
@@ -28,17 +31,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
-    {
-      "catppuccin/nvim",
-      name = "catppuccin",
-      priority = 1000,
-      init = function()
-        vim.cmd.colorscheme("catppuccin-mocha")
-      end,
-    },
     { import = "plugins.ui", },
-    { import = "plugins.code" },
     { import = "plugins.learning" },
+    { import = "plugins.code" },
   },
   change_detection = { enabled = false, },
   ui = {
