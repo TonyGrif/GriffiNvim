@@ -36,7 +36,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- [[ Typing ]]
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 500
 
 -- [[ UI ]]
 vim.opt.cursorline = true
