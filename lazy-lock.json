@@ -1,4 +1,6 @@
 {
+  "catppuccin": { "branch": "main", "commit": "cb5665990a797b102715188e73c44c3931b3b42e" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
-  "nvim-lspconfig": { "branch": "master", "commit": "3db16ceeea947517f0dc1404c24dcb5ab0c91d26" }
+  "nvim-lspconfig": { "branch": "master", "commit": "3db16ceeea947517f0dc1404c24dcb5ab0c91d26" },
+  "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" }
 }
