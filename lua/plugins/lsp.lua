@@ -1,4 +1,5 @@
 return {
+  -- TODO: Migrate this to new recommended setup
   "neovim/nvim-lspconfig",
   config = function()
     local lspconfig = require("lspconfig")
