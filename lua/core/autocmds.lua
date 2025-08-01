@@ -16,3 +16,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   end,
 })
+
+-- [[ Spacing ]]
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("double-spaced-langs", { clear = true }),
+  pattern = { "lua", "nix" },
+  callback = function()
+    vim.opt.autoindent = true
+    vim.opt.breakindent = true
+    vim.opt.expandtab = true
+    vim.opt.shiftwidth = 2
+    vim.opt.softtabstop = 2
+    vim.opt.tabstop = 2
+  end,
+})
