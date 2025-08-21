@@ -1,6 +1,9 @@
 -- [[ Easy Escape ]]
 vim.keymap.set("i", "jk", "<ESC>")
 
+-- [[ File Explorer ]]
+vim.keymap.set("n", "<leader>.", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 -- [[ Remove Highlight ]]
 vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>")
 
