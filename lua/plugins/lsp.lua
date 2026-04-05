@@ -3,15 +3,6 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-    {
-      'mason-org/mason.nvim',
-      ---@module 'mason.settings'
-      ---@type MasonSettings
-      ---@diagnostic disable-next-line: missing-fields
-      opts = {},
-    },
-    'mason-org/mason-lspconfig.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
@@ -55,10 +46,13 @@ return {
       end,
     })
 
-    ---@type table<string, vim.lsp.Config>
+    -- Each entry may include an `executable` key specifying the binary name to
+    -- check for. If omitted, the server name is used. On NixOS all LSPs are
+    -- installed by the user via nix; servers not present on the system are skipped.
+    ---@type table<string, vim.lsp.Config & { executable?: string }>
     local servers = {
-      stylua = {},
       lua_ls = {
+        executable = 'lua-language-server',
         on_init = function(client)
           if client.workspace_folders then
             local path = client.workspace_folders[1].name
@@ -82,13 +76,14 @@ return {
       },
     }
 
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {})
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
     for name, server in pairs(servers) do
-      vim.lsp.config(name, server)
-      vim.lsp.enable(name)
+      local executable = server.executable or name
+      server.executable = nil
+
+      if vim.fn.executable(executable) == 1 then
+        vim.lsp.config(name, server)
+        vim.lsp.enable(name)
+      end
     end
   end,
 }
