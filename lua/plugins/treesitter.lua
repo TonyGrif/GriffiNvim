@@ -6,9 +6,7 @@ return {
   build = ':TSUpdate',
   branch = 'main',
   config = function()
-    local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
-    require('nvim-treesitter').install(parsers)
-
+    -- Parser installation is handled by NixOS (see home-manager config).
     vim.api.nvim_create_autocmd('FileType', {
       callback = function(args)
         local buf, filetype = args.buf, args.match
