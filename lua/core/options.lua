@@ -16,8 +16,7 @@ vim.diagnostic.config {
 -- [[ Editor options ]]
 -- See `:help vim.o` and `:help option-list`
 
-vim.o.number = true
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 vim.o.mouse = 'a'
 vim.o.showmode = false
