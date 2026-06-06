@@ -46,9 +46,10 @@ return {
       end,
     })
 
-    -- Each entry may include an `executable` key specifying the binary name to
-    -- check for. If omitted, the server name is used. On NixOS all LSPs are
-    -- installed by the user via nix; servers not present on the system are skipped.
+    -- LSP servers are installed by the system package manager, not by Neovim.
+    -- Add server-specific settings here; missing executables are skipped.
+    -- If the lspconfig name differs from the binary, set `executable`.
+    -- If `cmd` is set, its first item is used for the executable check.
     ---@type table<string, vim.lsp.Config & { executable?: string }>
     local servers = {
       lua_ls = {
@@ -74,16 +75,34 @@ return {
         end,
         settings = { Lua = {} },
       },
+      pyright = {
+        executable = 'pyright-langserver',
+      },
     }
 
-    for name, server in pairs(servers) do
-      local executable = server.executable or name
-      server.executable = nil
+    local function server_config(name, server)
+      return vim.tbl_deep_extend('force', {}, vim.lsp.config[name] or {}, server)
+    end
 
-      if vim.fn.executable(executable) == 1 then
-        vim.lsp.config(name, server)
-        vim.lsp.enable(name)
-      end
+    local function server_executable(name, server, config)
+      if server.executable then return server.executable end
+      if type(config.cmd) == 'table' and type(config.cmd[1]) == 'string' then return config.cmd[1] end
+      return name
+    end
+
+    local function enable_system_lsp(name, server)
+      local config = server_config(name, server)
+      local executable = server_executable(name, server, config)
+      if vim.fn.executable(executable) ~= 1 then return end
+
+      config.executable = nil
+
+      vim.lsp.config(name, config)
+      vim.lsp.enable(name)
+    end
+
+    for name, server in pairs(servers) do
+      enable_system_lsp(name, server)
     end
   end,
 }

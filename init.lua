@@ -1,5 +1,3 @@
--- Set <space> as the leader key
--- NOTE: Must happen before plugins are loaded
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -25,12 +23,12 @@ require('lazy').setup({
   { import = 'plugins' },
 
   -- Optional kickstart plugins (uncomment to enable):
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommended keymaps
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommended keymaps
 
   -- Custom plugins from lua/custom/plugins/*.lua
   -- { import = 'custom.plugins' },
