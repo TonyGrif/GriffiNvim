@@ -50,6 +50,12 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
+  performance = {
+    reset_packpath = false,
+    rtp = {
+      reset = false,
+    },
+  },
 })
 
 -- vim: ts=2 sts=2 sw=2 et
