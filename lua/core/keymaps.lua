@@ -9,6 +9,13 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Exit terminal mode more easily
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+vim.keymap.set('n', '<leader>tt', function()
+  vim.cmd 'botright split'
+  vim.cmd 'resize 12'
+  vim.cmd 'terminal'
+  vim.cmd 'startinsert'
+end, { desc = '[T]erminal bottom split' })
+
 -- Window navigation with CTRL+<hjkl>
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
